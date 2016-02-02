@@ -1,0 +1,18 @@
+El proyecto de la farmacia, contara inicialmente con los modulos de:
+	- Ventas
+	- Clientes
+	- Inventario
+		- Carga
+		- Descarga
+	- Productos
+	* RRHH
+	* Reportes
+	* Proveedores
+
+* son los modulos por la cual no es tan necesario trabajar.
+El proyecto va ser realizado en la bd de mysql, y solo va funcionar en una computadora
+- por el momento solo se tendra acceso al usuario administrador y usuario normal, cuando 
+ya sea implementado el modulo de RH tendra la capacidad de poder administrar bien todo el
+software a su antojo y gana.
+El proyecto debe de ser implentado a menos de 3 semanas y no deben de llevar reportes hasta
+la 4ta semana.
