@@ -22,10 +22,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
+        
     }  
     
-    public void objectIS(SplashFarmaciaForm s){
+    public void objectIS(SplashFarmaciaForm s, String u, int id){
         this.initSesion = s;
+        if(id == 1){
+            this.userTotal.setText("Administrador: " + u + " ");
+        }
+        else{
+            this.userTotal.setText("Vendedor: " + u + " ");
+        }
+        
     }
     
     /**
@@ -38,6 +46,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
+        jPanel1 = new javax.swing.JPanel();
+        userTotal = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -54,16 +64,38 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jDesktopPane1.setBackground(new java.awt.Color(0, 153, 255));
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        userTotal.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        userTotal.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        userTotal.setText("Administrador: 12345678");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 804, Short.MAX_VALUE)
+                .addComponent(userTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(userTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 991, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 481, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                .addGap(0, 456, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+        jDesktopPane1.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jMenu1.setText("File");
         jMenu1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
@@ -153,5 +185,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel userTotal;
     // End of variables declaration//GEN-END:variables
 }

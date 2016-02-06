@@ -5,6 +5,8 @@
  */
 package SplashFarmacia;
 
+import javax.swing.JOptionPane;
+import querys.InicioSesion;
 import windows.VentanaPrincipal;
 
 /**
@@ -32,9 +34,9 @@ public class SplashFarmaciaForm extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        usuario = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        contrasenia = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -64,18 +66,19 @@ public class SplashFarmaciaForm extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Usuario");
 
-        jTextField1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        usuario.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        usuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Contraseña");
 
-        jPasswordField1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        jPasswordField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        contrasenia.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        contrasenia.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/16x16/user.png"))); // NOI18N
         jButton1.setText("Iniciar Sesion");
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -95,9 +98,9 @@ public class SplashFarmaciaForm extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(contrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(46, 46, 46)
@@ -105,10 +108,10 @@ public class SplashFarmaciaForm extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabel3)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel3))
+                        .addGap(60, 60, 60)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -119,14 +122,14 @@ public class SplashFarmaciaForm extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addComponent(contrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addComponent(jLabel3))
         );
 
@@ -175,10 +178,15 @@ public class SplashFarmaciaForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        VentanaPrincipal v = new VentanaPrincipal();
-        v.setVisible(true);
-        v.objectIS(this);
-        this.setVisible(false);
+        InicioSesion is = new InicioSesion(usuario.getText(), contrasenia.getText());
+        if(is.verificarVacio()>0){
+            VentanaPrincipal v = new VentanaPrincipal();
+            v.setVisible(true);
+            v.objectIS(this, usuario.getText(), is.verificarVacio());
+            this.setVisible(false);
+            this.usuario.setText("");
+            this.contrasenia.setText("");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jMenu1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jMenu1KeyPressed
@@ -234,6 +242,7 @@ public class SplashFarmaciaForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField contrasenia;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -242,7 +251,6 @@ public class SplashFarmaciaForm extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField usuario;
     // End of variables declaration//GEN-END:variables
 }
