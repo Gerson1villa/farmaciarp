@@ -65,7 +65,7 @@ public class InicioSesion {
             }
             
         }catch(Exception ex){
-      
+            JOptionPane.showMessageDialog(null, "Verifique conexion!!!");
         }
         if(contador == 0){
             return 0;
