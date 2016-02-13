@@ -6,6 +6,8 @@
 package windows;
 
 import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.beans.PropertyVetoException;
 import static windows.VentanaPrincipal.jDesktopPane1;
 
 /**
@@ -17,8 +19,9 @@ public class compra_medicamentos extends javax.swing.JInternalFrame {
     /**
      * Creates new form compra_medicamentos
      */
-    public compra_medicamentos() {
+    public compra_medicamentos() throws PropertyVetoException {
         initComponents();
+        
     }
 
     /**
@@ -42,6 +45,7 @@ public class compra_medicamentos extends javax.swing.JInternalFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         setClosable(true);
         setMaximizable(true);
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/SplashFarmacia/imagen-farmacia.png"))); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 153));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
