@@ -5,7 +5,6 @@
  */
 package SplashFarmacia;
 
-import javax.swing.JOptionPane;
 import querys.InicioSesion;
 import windows.VentanaPrincipal;
 
@@ -232,7 +231,7 @@ public class SplashFarmaciaForm extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try{
-                    Thread.sleep(1000);
+                    Thread.sleep(1000);                   
                 }catch(Exception e){
                 
                 }
