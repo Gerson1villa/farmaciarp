@@ -45,7 +45,7 @@ public class compra_medicamentos extends javax.swing.JInternalFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         setClosable(true);
         setMaximizable(true);
-        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/SplashFarmacia/imagen-farmacia.png"))); // NOI18N
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/16x16/logo.png"))); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 153));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));

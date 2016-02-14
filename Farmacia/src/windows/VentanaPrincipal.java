@@ -18,14 +18,17 @@ import javax.swing.UIManager;
 public class VentanaPrincipal extends javax.swing.JFrame {
     
     SplashFarmaciaForm initSesion;
-    compra_medicamentos cm = new compra_medicamentos();
+    compra_medicamentos cm;
     /**
      * Creates new form VentanaPrincipal
      */
     public VentanaPrincipal() {
         initComponents();
+        try{
+            cm = new compra_medicamentos();
+        }catch(Exception e){}
         this.setExtendedState(MAXIMIZED_BOTH);
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("../SplashFarmacia/imagen-farmacia.png")));
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("../16x16/logo.png")));
         
     }  
     

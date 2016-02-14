@@ -231,7 +231,7 @@ public class SplashFarmaciaForm extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try{
-                    Thread.sleep(1000);                   
+                    Thread.sleep(1500);                   
                 }catch(Exception e){
                 
                 }
